@@ -38,3 +38,17 @@ Revision history for Perl extension Net::AOLIM.
 	toc_chat_invite.  Fixed a potential infinite loop in
 	set_srv_buddies involving an off-by-one error in a for() test.
 	Thanks to Bruce Winter for pointing this out.
+
+1.4   Sat Apr 27, 2002
+	Changed the way that Net::AOLIM sends the login command string
+	because AOL apparently changed their server software, breaking
+	the previous implementation.  The new method requires that only
+	the user agent string be in double quotes; all other fields
+	should not be quoted.  Note that this does not affect the user
+	interface at all---it's all handled internally.  Thanks to Bruce 
+	Winter, Fred Frey, Aryeh Goldsmith, and tik for help in tracking 
+	down and fixing this error.
+
+	Also added additional checks to read_sflap_packet so that if the
+	other end of the connection dies we don't go into an infinite
+	loop.  Thanks to Chris Nelson for pointing this out.

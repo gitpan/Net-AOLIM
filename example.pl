@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 
 ###################################################################
-# Copyright (C) 2000 Riad Wahby <rsw@mit.edu> All rights reserved #
+# Copyright 2000-02 Riad Wahby <rsw@jfet.org> All rights reserved #
 # This program is free software.  You may redistribute it and/or  #
 # modify it under the same terms as Perl itself.                  #
 ###################################################################
@@ -51,7 +51,7 @@ unless (defined($foo->signon))
 
 while (1)
 {
-    $foo->ui_dataget(undef);
+    last unless defined($foo->ui_dataget(undef));
 }
 
 sub callback
