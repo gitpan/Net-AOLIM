@@ -30,4 +30,11 @@ Revision history for Perl extension Net::AOLIM.
 1.2   Wed Dec 19, 2001
 	Fixed a bug in toc_chat_invite that made it ignore some of
 	its arguments.  This should fix various problems with
-	using this subroutine.
+	using this subroutine.  Thanks to Mike Golvach for pointing
+        this out.
+
+1.3   Mon Mar 11, 2002
+	Changed (defined @tci_buddies) to (@tci_buddies) in
+	toc_chat_invite.  Fixed a potential infinite loop in
+	set_srv_buddies involving an off-by-one error in a for() test.
+	Thanks to Bruce Winter for pointing this out.
