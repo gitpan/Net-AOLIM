@@ -59,7 +59,7 @@ DESCRIPTION
         'login_timeout' => timeout in seconds to wait for a response to the
                            toc_signon packet.  Default is 0 (infinite)
         'aim_agent' => agentname (max 200 char) 
-                    Default is AOLIM:$Version 1.1$
+                    Default is AOLIM:$Version 1.2$
                     There have been some reports that changing this 
                     may cause TOC servers to stop responding to signon 
                     requests

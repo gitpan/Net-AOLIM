@@ -26,3 +26,8 @@ Revision history for Perl extension Net::AOLIM.
 		PROGRAM:$Version info$
 	Also added the ability to set a login timeout in case the
 	SIGN_ON packet never comes.
+
+1.2   Wed Dec 19, 2001
+	Fixed a bug in toc_chat_invite that made it ignore some of
+	its arguments.  This should fix various problems with
+	using this subroutine.

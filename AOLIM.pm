@@ -113,7 +113,7 @@ $SFLAP_TLV_TAG = 1;
 $SFLAP_HEADER_LEN = 6;
 
 # Net::AOLIM version
-$VERSION = "1.1";
+$VERSION = "1.2";
 
 # number of arguments that server messages have:
 %SERVER_MSG_ARGS = ( 'SIGN_ON' => 1,
@@ -214,7 +214,7 @@ values are optional):
     'login_timeout' => timeout in seconds to wait for a response to the
                        toc_signon packet.  Default is 0 (infinite)
     'aim_agent' => agentname (max 200 char) 
-                Default is AOLIM:$Version 1.1$
+                Default is AOLIM:$Version 1.2$
                 There have been some reports that changing this 
                 may cause TOC servers to stop responding to signon 
                 requests
@@ -1748,7 +1748,7 @@ sub toc_chat_invite
     my $imsg = shift @_;
     my $tci_roomid = shift @_;
     my $tci_msgtext = shift @_;
-    my @tci_buddies = ();
+    my @tci_buddies = @_;
 
     unless ((defined $tci_roomid) && (defined $tci_msgtext) && (defined @tci_buddies))
     {
