@@ -56,3 +56,13 @@ Revision history for Perl extension Net::AOLIM.
 1.5   Thu Oct 3, 2002
 	Added a very simple t/use.t test script that just makes sure
 	the module loads properly.
+
+1.6   Mon Jan 26, 2004
+        Patched around yet another undocumented "feature" of the TOC
+        protocol---namely, in order to successfully sign on, you must have
+        at least one buddy in your buddy list.  At sign-on, in the absence
+        of a real buddy list, Net::AOLIM inserts the current user as a
+        buddy in group "Me."  Don't bother removing this buddy, as it
+        doesn't really exist---as soon as you add any real buddies, this
+        one will go away.  Thanks to Galen Johnson and Jay Luker for
+        emailing with the symptoms.
