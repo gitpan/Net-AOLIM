@@ -6,3 +6,4 @@ README
 INSTALL
 TOC.7
 example.pl
+t/use.t

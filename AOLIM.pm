@@ -114,7 +114,7 @@ $SFLAP_TLV_TAG = 1;
 $SFLAP_HEADER_LEN = 6;
 
 # Net::AOLIM version
-$VERSION = "1.4";
+$VERSION = "1.5";
 
 # number of arguments that server messages have:
 %SERVER_MSG_ARGS = ( 'SIGN_ON' => 1,
@@ -2549,6 +2549,11 @@ B<1.4>
     Also added additional checks to read_sflap_packet so that if the
     other end of the connection dies we don't go into an infinite
     loop.  Thanks to Chris Nelson for pointing this out.
+
+B<1.5>
+
+    Added a very simple t/use.t test script that just makes sure
+    the module loads properly.
 
 =cut
 

@@ -52,3 +52,7 @@ Revision history for Perl extension Net::AOLIM.
 	Also added additional checks to read_sflap_packet so that if the
 	other end of the connection dies we don't go into an infinite
 	loop.  Thanks to Chris Nelson for pointing this out.
+
+1.5   Thu Oct 3, 2002
+	Added a very simple t/use.t test script that just makes sure
+	the module loads properly.
