@@ -1,5 +1,6 @@
 NAME
-    Net::AOLIM - OO interface to the AIM TOC client protocol
+    Net::AOLIM - Object-Oriented interface to the AOL Instant
+    Messenger TOC client protocol
 
 SYNOPSIS
     The really short form:
@@ -51,12 +52,14 @@ DESCRIPTION
         'password' => password
         'callback' => \&callbackfunction
         'server' => servername (default toc.oscar.aol.com)
-        'port' => port# (default 1555)
+        'port' => port number (default 1234)
         'allow_srv_settings' => <1 | 0> (default 1)
         'login_server' => login server (default login.oscar.aol.com)
-        'login_port' => login port (default 5159)
-        'aim_agent' => agentname (max 200 char) (default 'Net-AOLIM vX' where 
-                                                 X is the version number)
+        'login_port' => login port (default 5198)
+        'aim_agent' => agentname (max 200 char) (default 'TOC1.0' where 
+                    X is the version number)  There have been some reports
+                    that changing this may cause TOC servers to stop
+                    responding to signon requests
 
     callback is the callback function that handles incoming data
     from the server (already digested into command plus args). This
@@ -545,4 +548,11 @@ HISTORY
 
     0.11 Re-release under a different name with minor changes to the
     documentation. (7/16/00)
+
+    0.12 Minor modification to fix a condition in which the server's
+    connection closing could cause an infinite loop.
+
+    1.0 Changed the client agent string to TOC1.0 to fix a problem
+    where connections were sometimes ignored. Also changed the
+    default signon port to 5198 and the login port to 1234.
 

@@ -10,7 +10,7 @@ use vars qw($VERSION $AUTOLOAD);
 
 =head1 NAME
 
-Net::AOLIM - OO interface to the AIM TOC client protocol
+Net::AOLIM - Object-Oriented interface to the AOL Instant Messenger TOC client protocol
 
 =head1 SYNOPSIS
 
@@ -113,7 +113,7 @@ $SFLAP_TLV_TAG = 1;
 $SFLAP_HEADER_LEN = 6;
 
 # Net::AOLIM version
-$VERSION = "0.12";
+$VERSION = "1.0";
 
 # number of arguments that server messages have:
 %SERVER_MSG_ARGS = ( 'SIGN_ON' => 1,
@@ -206,12 +206,14 @@ values are optional):
     'password' => password
     'callback' => \&callbackfunction
     'server' => servername (default toc.oscar.aol.com)
-    'port' => port# (default 1555)
+    'port' => port number (default 1234)
     'allow_srv_settings' => <1 | 0> (default 1)
     'login_server' => login server (default login.oscar.aol.com)
-    'login_port' => login port (default 5159)
-    'aim_agent' => agentname (max 200 char) (default 'Net-AOLIM vX' where 
-					     X is the version number)
+    'login_port' => login port (default 5198)
+    'aim_agent' => agentname (max 200 char) (default 'TOC1.0' where 
+		X is the version number)  There have been some reports
+		that changing this may cause TOC servers to stop
+		responding to signon requests
 
 callback is the callback function that handles incoming data from the
 server (already digested into command plus args).  This is the meat of
@@ -250,10 +252,10 @@ sub new
 		
     ($args{'allow_srv_settings'} = 1) unless (defined $args{'allow_srv_settings'});
     $args{'server'} ||= 'toc.oscar.aol.com';
-    $args{'port'} ||= 1555;
+    $args{'port'} ||= 1234;
     $args{'login_server'} ||= 'login.oscar.aol.com';
-    $args{'login_port'} ||= 5159;
-    $args{'aim_agent'} ||= 'Net-AOLIM v' . $VERSION;
+    $args{'login_port'} ||= 5198;
+    $args{'aim_agent'} ||= 'TOC1.0';
 
 # Make a new instance of instmsg and bless it.
 
@@ -2423,6 +2425,15 @@ B<0.1>
 B<0.11>
     Re-release under a different name with minor changes to the 
     documentation. (7/16/00)
+
+B<0.12>
+    Minor modification to fix a condition in which the server's
+    connection closing could cause an infinite loop.
+
+B<1.0>
+    Changed the client agent string to TOC1.0 to fix a problem where
+    connections were sometimes ignored.  Also changed the default signon
+    port to 5198 and the login port to 1234.
 
 =cut
 

@@ -1,4 +1,4 @@
-#!/usr/athena/bin/perl -w
+#!/usr/bin/perl -w
 
 ###################################################################
 # Copyright (C) 2000 Riad Wahby <rsw@mit.edu> All rights reserved #
@@ -35,6 +35,8 @@ $foo = Net::AOLIM->new("username" => $username,
 		     "callback" => \&callback,
 		     "allow_srv_settings" => 0 );
 
+print $foo->{'aim_agent'}, "\n";
+
 $foo->add_buddies("friends", $username);
 
 $foo->ui_add_fh(\*STDIN, \&callbacksi);
@@ -48,7 +50,7 @@ unless (defined($foo->signon))
 
 while (1)
 {
-    exit unless defined($foo->ui_dataget(undef));
+    $foo->ui_dataget(undef);
 }
 
 sub callback

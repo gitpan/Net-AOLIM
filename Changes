@@ -14,3 +14,8 @@ Revision history for Perl extension Net::AOLIM.
 0.12  Sun Jul 16
 	Minor modification to fix a condition in which the server's
 	connection closing could cause an infinite loop.
+
+1.0   Sun Jan 8, 2001
+	Changed the client agent string to TOC1.0 to fix a problem
+	where connections were sometimes ignored.  Also changed the
+	default signon port to 5198 and the login port to 1234.
