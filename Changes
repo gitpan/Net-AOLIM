@@ -1,0 +1,12 @@
+Revision history for Perl extension Net::AOLIM.
+
+0.01  Fri Jul 7
+	Initial beta release.
+
+0.1   Fri Jul 14
+	First public release on CPAN.  Documentation
+	and Makefiles added.
+
+0.11  Sun Jul 16
+	Re-release under a different name with minor changes to the
+	documentation.
