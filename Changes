@@ -66,3 +66,9 @@ Revision history for Perl extension Net::AOLIM.
         doesn't really exist---as soon as you add any real buddies, this
         one will go away.  Thanks to Galen Johnson and Jay Luker for
         emailing with the symptoms.
+
+1.61  Tue Jul 27, 2004
+	Made a small change to the example.pl script to keep it from
+	dumping deref warnings.  Thanks to an anonymous person who sent
+	this suggestion through the CPAN bug tracking system.
+

@@ -13,12 +13,15 @@ sub callbacksi;
 # coming from the server.  See man page for more
 # info
 %com1 = (' ' => '',
+	 ''  => '',
 	 'A' => 'on AOL');
 %com2 = (' ' => '',
+	 ''  => '',
 	 'A' => 'Oscar Admin',
 	 'U' => 'Oscar Unconfirmed',
 	 'O' => 'Oscar Normal');
 %com3 = ("\0" => '',
+	 ''  => '',
 	 ' ' => '',
 	 'U' => 'Unavailable');
 

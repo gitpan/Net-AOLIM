@@ -114,7 +114,7 @@ $SFLAP_TLV_TAG = 1;
 $SFLAP_HEADER_LEN = 6;
 
 # Net::AOLIM version
-$VERSION = "1.6";
+$VERSION = "1.61";
 
 # number of arguments that server messages have:
 %SERVER_MSG_ARGS = ( 'SIGN_ON' => 1,
@@ -2590,5 +2590,11 @@ B<1.6>
     doesn't really exist---as soon as you add any real buddies, this
     one will go away.  Thanks to Galen Johnson and Jay Luker for
     emailing with the symptoms.
+
+B<1.61>
+
+   Made a small change to the example.pl script to keep it from
+   dumping deref warnings.  Thanks to an anonymous person who sent
+   this suggestion through the CPAN bug tracking system.
 
 =cut
