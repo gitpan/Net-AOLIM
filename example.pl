@@ -31,9 +31,10 @@ print "Enter password: ";
 chomp ($password = <>);
 
 $foo = Net::AOLIM->new("username" => $username, 
-		     "password" => $password,
-		     "callback" => \&callback,
-		     "allow_srv_settings" => 0 );
+		       "password" => $password,
+		       "callback" => \&callback,
+		       "allow_srv_settings" => 0,
+		       "login_timeout" => 2 );
 
 print $foo->{'aim_agent'}, "\n";
 

@@ -19,3 +19,10 @@ Revision history for Perl extension Net::AOLIM.
 	Changed the client agent string to TOC1.0 to fix a problem
 	where connections were sometimes ignored.  Also changed the
 	default signon port to 5198 and the login port to 1234.
+
+1.1   Sat Mar 17, 2001
+	Changed the client agent string again, this time to what
+	seems like the "correct" format, which is
+		PROGRAM:$Version info$
+	Also added the ability to set a login timeout in case the
+	SIGN_ON packet never comes.

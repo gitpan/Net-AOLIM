@@ -56,10 +56,13 @@ DESCRIPTION
         'allow_srv_settings' => <1 | 0> (default 1)
         'login_server' => login server (default login.oscar.aol.com)
         'login_port' => login port (default 5198)
-        'aim_agent' => agentname (max 200 char) (default 'TOC1.0' where 
-                    X is the version number)  There have been some reports
-                    that changing this may cause TOC servers to stop
-                    responding to signon requests
+        'login_timeout' => timeout in seconds to wait for a response to the
+                           toc_signon packet.  Default is 0 (infinite)
+        'aim_agent' => agentname (max 200 char) 
+                    Default is AOLIM:$Version 1.1$
+                    There have been some reports that changing this 
+                    may cause TOC servers to stop responding to signon 
+                    requests
 
     callback is the callback function that handles incoming data
     from the server (already digested into command plus args). This
