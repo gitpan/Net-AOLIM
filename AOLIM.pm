@@ -113,7 +113,7 @@ $SFLAP_TLV_TAG = 1;
 $SFLAP_HEADER_LEN = 6;
 
 # Net::AOLIM version
-$VERSION = "0.11";
+$VERSION = "0.12";
 
 # number of arguments that server messages have:
 %SERVER_MSG_ARGS = ( 'SIGN_ON' => 1,
@@ -2288,7 +2288,7 @@ sub ui_dataget
     {
 	if ($rfh == $$im_socket)
 	{
-	    $recv_buffer = $imsg->read_sflap_packet();
+	   return undef unless defined($recv_buffer = $imsg->read_sflap_packet());
 	    ($tp_type, $tp_tmp) = split(/:/, $recv_buffer, 2);
 
 # pause if we've been told to by the server

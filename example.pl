@@ -48,7 +48,7 @@ unless (defined($foo->signon))
 
 while (1)
 {
-    $foo->ui_dataget(undef);
+    exit unless defined($foo->ui_dataget(undef));
 }
 
 sub callback
@@ -90,6 +90,7 @@ sub callback
     }
     else
     {
+	print $type, "\n", join("\n", @_), "\n";
 	return 0;
     }
 }

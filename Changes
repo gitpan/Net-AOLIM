@@ -10,3 +10,7 @@ Revision history for Perl extension Net::AOLIM.
 0.11  Sun Jul 16
 	Re-release under a different name with minor changes to the
 	documentation.
+
+0.12  Sun Jul 16
+	Minor modification to fix a condition in which the server's
+	connection closing could cause an infinite loop.

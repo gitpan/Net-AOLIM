@@ -17,7 +17,7 @@ will work properly.
 In addition, you may want to copy the file TOC.7 into your man7
 directory.  Generally, this will be
 
-/usr/man/man7/
+/usr/man/man7
 
 or
 
